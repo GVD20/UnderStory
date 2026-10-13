@@ -1,0 +1,61 @@
+import { ArrowLeft as IPArrowLeft, BookOpen as IPBookOpen, Bookmark as IPBookmark, Bookshelf as IPBookshelf, Brain as IPBrain, Close as IPClose, Comment as IPComment, CompassOne as IPCompassOne, Cpu as IPCpu, Delete as IPDelete, Down as IPDown, Edit as IPEdit, FileSearch as IPFileSearch, FileText as IPFileText, Home as IPHome, ImportAndExport as IPImportAndExport, IndentLeft as IPIndentLeft, IndentRight as IPIndentRight, Layers as IPLayers, Left as IPLeft, List as IPList, Loading as IPLoading, Lock as IPLock, Magic as IPMagic, Message as IPMessage, Minus as IPMinus, Monitor as IPMonitor, Moon as IPMoon, Pic as IPPic, Picture as IPPicture, Plus as IPPlus, PreviewClose as IPPreviewClose, Right as IPRight, Search as IPSearch, Send as IPSend, SettingTwo as IPSettingTwo, Shield as IPShield, Sun as IPSun, Time as IPTime, Tool as IPTool, Undo as IPUndo, Up as IPUp } from "@icon-park/react";
+import type { CSSProperties } from "react";
+import { homeCutoutPath, settingsCutoutPath } from "./icon-assets/cutout-paths";
+type IconProps = { size?: number; className?: string; style?: CSSProperties; strokeWidth?: number; filled?: boolean };
+function icon(Component: typeof IPArrowLeft) {
+  return function DesktopIcon({ size = 20, className, style, strokeWidth = 3, filled = false }: IconProps) {
+    const cutoutPath = Component === IPHome ? homeCutoutPath : Component === IPSettingTwo ? settingsCutoutPath : null;
+    if (filled && cutoutPath) return <span className={`i-icon ${className ?? ''}`} style={style}><svg width={size} height={size} viewBox="0 0 48 48" aria-hidden="true"><path d={cutoutPath} fill="currentColor" fillRule="evenodd" stroke="currentColor" strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round" /></svg></span>;
+
+    return <Component theme="outline" size={size} strokeWidth={strokeWidth} fill="currentColor" strokeLinecap="round" strokeLinejoin="round" className={className} style={style} />;
+  };
+}
+
+export const ArrowLeft = icon(IPArrowLeft);
+export const BookMarked = icon(IPBookmark);
+export const BookOpen = icon(IPBookOpen);
+export const BookOpenText = icon(IPBookOpen);
+export const Brain = icon(IPBrain);
+export const ChevronDown = icon(IPDown);
+export const ChevronLeft = icon(IPLeft);
+export const ChevronRight = icon(IPRight);
+export const ChevronUp = icon(IPUp);
+export const Clock3 = icon(IPTime);
+export const Compass = icon(IPCompassOne);
+export const Cpu = icon(IPCpu);
+export const EyeOff = icon(IPPreviewClose);
+export const FileSearch = icon(IPFileSearch);
+export const FileText = icon(IPFileText);
+export const Home = icon(IPHome);
+export const ImageIcon = icon(IPPic);
+export const ImageOff = icon(IPPreviewClose);
+export const Images = icon(IPPicture);
+export const Import = icon(IPImportAndExport);
+export const Layers = icon(IPLayers);
+export const LibraryBig = icon(IPBookshelf);
+export const List = icon(IPList);
+export const ListTree = icon(IPList);
+export const LoaderCircle = icon(IPLoading);
+export const Lock = icon(IPLock);
+export const MessageCircle = icon(IPMessage);
+export const MessageSquarePlus = icon(IPComment);
+export const Minus = icon(IPMinus);
+export const Monitor = icon(IPMonitor);
+export const Moon = icon(IPMoon);
+export const PanelLeftClose = icon(IPIndentLeft);
+export const PanelLeftOpen = icon(IPIndentRight);
+export const PanelRightClose = icon(IPIndentRight);
+export const Pencil = icon(IPEdit);
+export const Plus = icon(IPPlus);
+export const RotateCcw = icon(IPUndo);
+export const Search = icon(IPSearch);
+export const Send = icon(IPSend);
+export const Settings2 = icon(IPSettingTwo);
+export const Shield = icon(IPShield);
+export const ShieldAlert = icon(IPShield);
+export const ShieldOff = icon(IPShield);
+export const Sparkles = icon(IPMagic);
+export const Sun = icon(IPSun);
+export const Trash2 = icon(IPDelete);
+export const Wrench = icon(IPTool);
+export const X = icon(IPClose);

@@ -1,0 +1,3 @@
+/* Isolate inherited content details beneath the desktop design system. */
+@import './globals.css' layer(content);
+@import './desktop.css' layer(desktop);

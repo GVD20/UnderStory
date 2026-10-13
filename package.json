@@ -1,0 +1,51 @@
+{
+  "name": "understory",
+  "version": "0.1.0-alpha.1",
+  "private": true,
+  "description": "Local-first reading, Wiki and AI companion",
+  "type": "module",
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "8.0.1",
+    "@electron-forge/maker-zip": "8.0.1",
+    "@icon-park/react": "1.4.2",
+    "@types/node": "22.20.5",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@vitejs/plugin-react": "6.1.2",
+    "electron": "44.7.0",
+    "eslint": "10.12.0",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "react-markdown": "10.1.0",
+    "remark-gfm": "4.0.1",
+    "typescript": "7.0.2",
+    "vite": "8.3.4"
+  },
+  "main": "electron/main.cjs",
+  "author": "GVD20",
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "start": "electron .",
+    "typecheck": "tsc --noEmit",
+    "build": "vite build",
+    "build:backend": "pwsh -NoProfile -File scripts/build-backend.ps1",
+    "build:inspector": "pwsh -NoProfile -File scripts/build-inspector.ps1",
+    "package": "npm run build && npm run build:backend && electron-forge package",
+    "make": "npm run build && npm run build:backend && electron-forge make"
+  },
+  "config": {
+    "forge": "./forge.config.cjs"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GVD20/UnderStory.git"
+  },
+  "homepage": "https://github.com/GVD20/UnderStory#readme",
+  "bugs": {
+    "url": "https://github.com/GVD20/UnderStory/issues"
+  }
+}
