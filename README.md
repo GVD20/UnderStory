@@ -4,9 +4,8 @@
 
 # UnderStory
 
-**一款 AI 原生的轻小说阅读器**
-
-栽一棵智能的树，为阅读而生长。
+**栽一棵智能的树，为阅读而生长。**
+轻小说阅读器
 
 ![版本](https://img.shields.io/badge/版本-0.1.0--alpha.1-347645)
 ![平台](https://img.shields.io/badge/平台-Windows_x64-586777)
